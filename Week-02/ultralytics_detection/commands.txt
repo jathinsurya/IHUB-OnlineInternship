@@ -1,0 +1,4 @@
+to test the run the command used is 
+
+yolo predict model=yolov8n.pt source="https://ultralytics.com/images/fmly2.jpg"
+

@@ -1,0 +1,13 @@
+Week 2 - Object Detection using Ultralytics YOLO
+ Created a virtual environment using Python venv and activated it.
+ Installed the ultralytics package inside the virtual environment.
+ Used the pretrained YOLOv8n model for object detection.
+
+Command used:
+python -m ultralytics yolo predict model=yolov8n.pt source="https://ultralytics.com/images/Result.jpg"
+ The model detected objects such as person, bus, and other vehicles.
+ Output image with bounding boxes was generated in the runs/detect/predict folder.
+
+Observations:
+ Detection was fast and accurate using the pretrained model.
+ The model automatically downloaded required weights if not present.

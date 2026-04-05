@@ -1,0 +1,4 @@
+# Extract specific frames from video
+ffmpeg -i myvideo.mp4 -ss 00:00:02 -vframes 1 img1.jpg
+ffmpeg -i myvideo.mp4 -ss 00:00:05 -vframes 1 img2.jpg
+ffmpeg -i myvideo.mp4 -ss 00:00:08 -vframes 1 img3.jpg
