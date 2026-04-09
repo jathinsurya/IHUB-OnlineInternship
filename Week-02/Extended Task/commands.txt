@@ -1,0 +1,15 @@
+# Frame extraction
+ffmpeg -i video1.mp4 -vf fps=2 image/v1_%03d.png
+ffmpeg -t 60 -i video2.mp4 -vf fps=2 image/v2_%03d.png
+
+# YOLO detection
+yolo predict model=yolov8n.pt source="image"
+
+# Rename images (PowerShell)
+$i=1; Get-ChildItem *.jpg | Sort-Object Name | ForEach-Object {Rename-Item $_ ("img_{0:D3}.jpg" -f $i); $i++}
+
+# Create video
+ffmpeg -framerate 4 -i img_%03d.jpg -c:v libx264 -pix_fmt yuv420p output_detected.mp4
+
+# Add audio
+ffmpeg -i output_detected.mp4 -i music.mp3 -c:v copy -c:a aac -shortest final_output.mp4

@@ -1,0 +1,12 @@
+Advanced Task - Object Detection Pipeline
+
+- Used two videos containing people and vehicles.
+- Extracted frames using FFmpeg at controlled frame rate.
+- Applied YOLOv8 object detection on multiple images.
+- Combined annotated images into a video.
+- Adjusted frame rate to control playback speed (~30 seconds output).
+- Added background audio and synchronized using FFmpeg.
+
+Observation:
+- YOLO detects only pretrained object classes.
+- Better input frames improve detection quality significantly.
