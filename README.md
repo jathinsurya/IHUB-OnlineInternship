@@ -130,6 +130,7 @@ These tasks helped build a strong foundation in:
 * Converted detected images into a video using FFmpeg.
 * Adjusted frame rate to control playback speed (~30 seconds output).
 * Added background audio and synchronized using FFmpeg.
+  
 ✔ Output
 * Final video created from detected images with audio overlay.
 * Sample annotated images available in repository.
