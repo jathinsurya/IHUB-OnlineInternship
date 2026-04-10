@@ -121,3 +121,19 @@ These tasks helped build a strong foundation in:
 * Basic computer vision workflows
 
 ---
+🔹 Advanced Task – Multi-Image Object Detection Pipeline
+* Used multiple videos containing people and vehicles to ensure meaningful object detection.
+* Extracted frames from videos using FFmpeg with controlled frame rate.
+* Combined frames from different sources into a single dataset.
+* Applied YOLOv8 pretrained model for object detection on all images.
+* Generated annotated images with bounding boxes.
+* Converted detected images into a video using FFmpeg.
+* Adjusted frame rate to control playback speed (~30 seconds output).
+* Added background audio and synchronized using FFmpeg.
+✔ Output
+* Final video created from detected images with audio overlay.
+* Sample annotated images available in repository.
+🧠 Observations
+YOLO detects only pretrained object classes (e.g., person, car, bus).
+Detection quality depends heavily on input image clarity and object presence.
+Frame selection plays a key role in meaningful output.
