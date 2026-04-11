@@ -134,6 +134,8 @@ These tasks helped build a strong foundation in:
 ✔ Output
 * Final video created from detected images with audio overlay.
 * Sample annotated images available in repository.
+
+
 🧠 Observations
 YOLO detects only pretrained object classes (e.g., person, car, bus).
 Detection quality depends heavily on input image clarity and object presence.
