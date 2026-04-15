@@ -1,0 +1,21 @@
+# Week 03 - Semantic Segmentation Commands
+
+# 1. Run segmentation using YOLOv8 segmentation model
+
+yolo task=segment mode=predict model=yolov8n-seg.pt source="C:\Users\jathi\image"
+
+# 2. Navigate to output folder
+
+cd C:\Users\jathi\Documents\summer\runs\segment\predict
+
+# 3. Rename images to sequential format (PowerShell)
+
+$i=1; Get-ChildItem *.jpg | Sort-Object Name | ForEach-Object {Rename-Item $_ ("img_{0:D3}.jpg" -f $i); $i++}
+
+# 4. Convert segmented images to video
+
+ffmpeg -framerate 4 -i img_%03d.jpg -c:v libx264 -pix_fmt yuv420p segmented_video.mp4
+
+# 5. Add background audio
+
+ffmpeg -i segmented_video.mp4 -i new_music.mp3 -c:v copy -c:a aac -shortest final_segmented.mp4

@@ -1,0 +1,32 @@
+Performance Metrics (Week 03)
+
+Model Used:
+
+* YOLOv8n (pretrained)
+
+Dataset:
+
+* Total images processed: 134
+
+  * Video 1: 14 images
+  * Video 2: 120 images
+
+Inference-Based Metrics:
+
+* Detection counts per image were analyzed.
+* Confidence-based evaluation was limited due to absence of full prediction confidence data.
+
+Observations:
+
+* Higher number of detections in images containing multiple objects.
+* Better segmentation quality observed for large and clear objects.
+* Reduced performance in low-resolution (640x360) frames.
+* Model detects only pretrained classes (e.g., person, car).
+
+Graph Analysis:
+
+* Detection count graph shows variation of objects across frames.
+* Higher object density observed in second video frames.
+
+Conclusion:
+The segmentation model performs well for common objects and provides precise boundaries, but performance depends on image quality and object visibility.

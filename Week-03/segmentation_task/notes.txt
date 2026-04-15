@@ -1,0 +1,27 @@
+Semantic Segmentation Task (Week 03)
+
+In this task, semantic segmentation was performed on a set of images using the YOLOv8 segmentation model.
+
+Key Points:
+
+* Segmentation provides pixel-level classification of objects.
+* Unlike object detection, segmentation identifies the exact shape and boundary of objects.
+* Each detected object is represented using a colored mask.
+
+Process:
+
+* Images extracted from videos in previous tasks were used.
+* YOLOv8 segmentation model (yolov8n-seg.pt) was applied.
+* Segmented images were generated with colored overlays.
+* Images were converted into a video using FFmpeg.
+* Background audio was added to enhance visualization.
+
+Applications:
+
+* Medical imaging (tumor boundary detection)
+* Autonomous driving (road and pedestrian detection)
+* Surveillance systems
+* Defense systems (target identification)
+
+Conclusion:
+Semantic segmentation provides more detailed information compared to object detection and is useful in applications requiring precise object boundaries.
