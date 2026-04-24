@@ -2,225 +2,183 @@
 
 ## 📌 Overview
 
-This repository contains my submissions for Week 1 and Week 2 of the IHUB Online Internship. The tasks focus on multimedia processing using FFmpeg and basic computer vision using Ultralytics YOLO.
+This repository contains my work for the IHUB Online Internship, covering multimedia processing and computer vision pipelines using FFmpeg and Ultralytics YOLO.
 
 ---
 
 # 📅 Week 1 – Multimedia Processing (FFmpeg)
 
 ## 🔹 Task 1: Extract Frames from Video
-
-* Downloaded a short video.
-* Used FFmpeg to extract specific frames at different timestamps.
-* Generated sample images:
-
-  * img_1.jpg
-  * img_2.jpg
-  * img_3.jpg
+- Downloaded a sample video
+- Extracted frames at specific timestamps using FFmpeg
+- Generated sample images:
+  - img_1.jpg
+  - img_2.jpg
+  - img_3.jpg
 
 ---
 
 ## 🔹 Task 2: Frames to Video
-
-* Extracted frames from a 1-minute segment at **30 FPS (~1800 frames)**.
-* Reconstructed the video from these frames using FFmpeg.
-* Uploaded the generated video to Google Drive.
+- Extracted frames from a 1-minute video segment (~1800 frames at 30 FPS)
+- Reconstructed video from frames using FFmpeg
+- Uploaded output video to Google Drive
 
 ---
 
 ## 🔹 Task 3: Audio Merge
-
-* Selected a 1-minute audio track from Pixabay.
-* Trimmed the audio to exactly 60 seconds.
-* Merged the audio with the reconstructed video using FFmpeg.
-* Generated final video with synchronized audio.
+- Selected a 1-minute audio track
+- Trimmed audio to match video duration
+- Merged audio and video using FFmpeg
 
 ---
 
 ## 🛠 Tools Used (Week 1)
-
-* FFmpeg
-* yt-dlp (for downloading videos)
-* Google Drive (for video hosting)
+- FFmpeg
+- yt-dlp
+- Google Drive
 
 ---
 
-# 📅 Week 2 – Python Virtual Environment & Object Detection
+# 📅 Week 2 – Object Detection using YOLOv8
 
 ## 🔹 Virtual Environment Setup
-
-* Created a Python virtual environment using `venv`.
-* Activated environment and installed required packages.
+- Created isolated Python environment using `venv`
+- Installed required libraries
 
 ---
 
-## 🔹 Ultralytics YOLO Object Detection
-
-* Installed Ultralytics package inside the virtual environment.
-* Used pretrained **YOLOv8n model** for object detection.
-* Ran detection on a sample image.
+## 🔹 Object Detection
+- Used pretrained **YOLOv8n model**
+- Performed object detection on images
+- Generated annotated outputs with bounding boxes
 
 ### ✔ Output
+- Detection results stored in:runs/detect/predict/
 
-* Generated image with bounding boxes and labels (e.g., person, bus).
-* Output stored in:
+  
+---
 
-  ```
-  runs/detect/predict/
-  ```
+## 🔹 Advanced Task – Multi-Image Detection Pipeline
+
+### ⚙️ Workflow
+- Selected videos containing **people and vehicles**
+- Extracted frames using FFmpeg
+- Applied YOLOv8 detection on all frames
+- Generated annotated images
+- Converted images back to video
+- Adjusted playback speed
+- Added background audio
+
+### ✔ Output
+- Final detection video
+- Sample annotated images
+- Google Drive link provided
 
 ---
 
 ## 🛠 Tools Used (Week 2)
+- Python (venv)
+- Ultralytics YOLOv8
+- OpenCV
 
-* Python (venv)
-* Ultralytics YOLOv8
-* OpenCV (dependency)
+---
+
+# 📅 Week 3 – Semantic Segmentation & Video Pipeline
+
+## 📌 Objective
+Extend object detection to **semantic segmentation** and build a complete video pipeline.
+
+---
+
+## 🔹 Workflow
+
+1. Converted raw images into video (OpenCV)
+2. Applied YOLOv8 object detection
+3. Applied YOLOv8 semantic segmentation
+4. Generated segmented images (pixel-level masks)
+5. Converted outputs into videos using FFmpeg
+6. Normalized FPS and resolution (4 FPS, 640×360)
+7. Stacked videos vertically:
+ - Raw Video
+ - Detection Video
+ - Segmentation Video
+8. Added background audio to final output
+
+---
+
+## 🎯 Key Concepts
+
+- **Object Detection** → Bounding boxes
+- **Semantic Segmentation** → Pixel-level classification
+
+---
+
+## 📂 Outputs
+
+- Final stacked video available in repository: Week-03/outputs/final_output.mp4
+
+---
+
+## 📊 Performance Observations
+
+- Total images processed: **134**
+- Detection accuracy improves with clear, high-resolution frames
+- Segmentation performs best on larger objects
+- Performance drops in low-resolution (640×360) frames
+- Model limited to pretrained object classes
+
+---
+
+## 📈 Analysis
+
+- Frames from longer videos had higher object density
+- Motion blur and poor lighting reduce detection accuracy
+- Consistent frame sequencing is critical for synchronization
+
+---
+
+## 🧠 Applications
+
+- Medical Imaging → Tumor detection
+- Autonomous Driving → Road and pedestrian segmentation
+- Surveillance Systems → Activity monitoring
+- Defense Systems → Target tracking
 
 ---
 
 # 📂 Repository Structure
-
-```
 Week-01/
-  ├── Task1_ffmpeg_frames/
-  ├── Task2_frames_to_video/
-  └── Task3_audio_merge/
-
 Week-02/
-  ├── venv_setup/
-  └── ultralytics_detection/
-```
+Week-03/
+├── outputs/
+│ └── final_output.mp4
+├── commands.txt
+├── notes.txt
+└── README.md
+
 
 ---
 
 # 📊 Key Learnings
 
-* Understanding video processing pipeline (frames extraction & reconstruction)
-* Working with frame rates and encoding
-* Audio-video synchronization using FFmpeg
-* Setting up isolated Python environments
-* Running pretrained deep learning models for object detection
-
----
-
-# 🔗 Outputs
-
-* Sample images and detection outputs are included in the repository.
-* Generated videos are shared via Google Drive links inside respective folders.
+- Video processing using FFmpeg
+- Frame extraction and reconstruction
+- Audio-video synchronization
+- Environment setup using Python venv
+- Object detection using pretrained models
+- Semantic segmentation for pixel-level understanding
+- Importance of data consistency in pipelines
 
 ---
 
 # 🚀 Conclusion
 
-These tasks helped build a strong foundation in:
+This internship helped build a complete understanding of:
 
-* Multimedia processing
-* Command-line tools (FFmpeg)
-* Python environment management
-* Basic computer vision workflows
+- Multimedia processing pipelines
+- Computer vision workflows
+- End-to-end integration of FFmpeg and deep learning models
 
----
-
-## 🔹 Week 2 – Advanced Task: Multi-Image Object Detection Pipeline
-
-### 📌 Objective
-
-To extend basic object detection to a full pipeline by processing multiple images extracted from videos, applying detection, and reconstructing results into a video.
-
-### ⚙️ Workflow
-
-* Selected multiple videos containing **people and vehicles** for meaningful detection.
-* Extracted frames using FFmpeg at controlled frame rates.
-* Combined frames from different video sources into a single dataset.
-* Applied **Ultralytics YOLOv8n (pretrained)** model on all images.
-* Generated annotated images with bounding boxes and class labels.
-* Converted detected images into a video using FFmpeg.
-* Adjusted frame rate to control playback speed (~30 seconds output).
-* Added background audio and synchronized video using FFmpeg.
-
-### ✔ Output
-
-* Final video showing detected objects with bounding boxes.
-* Sample annotated images included in repository.
-* Video link provided via Google Drive.
-
-### 🧠 Observations
-
-* YOLO detects only pretrained object classes (e.g., person, car, bus).
-* Detection quality improves with clear and well-lit images.
-* Poor resolution and motion blur reduce detection accuracy.
-* Frame selection significantly impacts overall output quality.
-
----
-
-## 📅 Week 3 – Semantic Segmentation & Performance Analysis
-
-### 📌 Objective
-
-To perform **semantic segmentation** on images and analyze model performance using inference-based metrics.
-
-### ⚙️ Workflow
-
-* Used previously extracted images as input dataset.
-* Applied **YOLOv8 segmentation model (yolov8n-seg.pt)**.
-* Generated images with **pixel-level colored masks** for each object.
-* Renamed output images into a continuous sequence.
-* Converted segmented images into video using FFmpeg.
-* Added new background audio to enhance visualization.
-
-### 🎯 Key Concept
-
-* **Object Detection** → Provides bounding boxes
-* **Segmentation** → Provides exact object boundaries (pixel-level)
-
-### ✔ Output
-
-* Segmented images with colored masks.
-* Final video showing semantic segmentation results.
-* Sample segmented outputs included in repository.
-* Video link provided via Google Drive.
-
----
-
-### 📊 Performance Metrics (Inference-Based)
-
-Since pretrained models were used without training, performance was analyzed using prediction outputs:
-
-* Total images processed: **134**
-* Detection count per image analyzed
-* Object distribution observed across frames
-
-#### Observations:
-
-* Higher object density observed in frames from longer video (v2).
-* Better segmentation results for large and clearly visible objects.
-* Reduced performance in low-resolution frames (640×360).
-* Model limited to predefined classes.
-
-#### Graphs Included:
-
-* Detection count per image
-
----
-
-### 🧠 Applications of Semantic Segmentation
-
-* **Medical Imaging** → Tumor boundary detection
-* **Autonomous Driving** → Road and pedestrian understanding
-* **Surveillance Systems** → Activity monitoring
-* **Defense Systems** → Target identification
-
----
-
-### 🚀 Conclusion
-
-This week expanded the pipeline from object detection to **pixel-level understanding** of images.
-
-Key takeaways:
-
-* Segmentation provides more precise information than detection.
-* Model performance depends heavily on input quality.
-* Combining FFmpeg + YOLO enables powerful end-to-end vision pipelines.
+The transition from detection to segmentation highlights the importance of precision in real-world applications.
 
 ---
