@@ -1,0 +1,23 @@
+# Convert images to video (OpenCV used for raw video)
+
+# Detection
+python -m ultralytics yolo predict model=yolov8n.pt source="image"
+
+# Segmentation
+python -m ultralytics yolo predict task=segment model=yolov8n-seg.pt source="image"
+
+# Convert images to video
+ffmpeg -framerate 4 -i img_%03d.jpg -vf "scale=640:360,format=yuv420p" -an detect.mp4
+
+ffmpeg -framerate 4 -i img_%03d.jpg -vf "scale=640:360,format=yuv420p" -an segment.mp4
+
+# Normalize videos
+ffmpeg -i raw.mp4 -vf "fps=4,scale=640:360" -an raw_fixed.mp4
+ffmpeg -i detect.mp4 -vf "fps=4,scale=640:360" -an detect_fixed.mp4
+ffmpeg -i segment.mp4 -vf "fps=4,scale=640:360" -an segment_fixed.mp4
+
+# Stack videos
+ffmpeg -i raw_fixed.mp4 -i detect_fixed.mp4 -i segment_fixed.mp4 -filter_complex "vstack=inputs=3" stacked.mp4
+
+# Add audio
+ffmpeg -i stacked.mp4 -i music.mp3 -c:v copy -c:a aac -shortest final_output.mp4
