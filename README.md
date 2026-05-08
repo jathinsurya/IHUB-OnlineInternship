@@ -182,3 +182,43 @@ This internship helped build a complete understanding of:
 The transition from detection to segmentation highlights the importance of precision in real-world applications.
 
 ---
+
+# Week 4 – Task 2: Custom Dataset Creation using Label Studio
+
+## 📌 Objective
+
+To create a custom labeled dataset suitable for YOLO training by extracting frames from a real-world video, annotating objects manually, and organizing the dataset in YOLO-compatible format.
+
+---
+
+## 🔹 Task Overview
+
+This task focused on understanding the complete dataset preparation workflow required for training object detection models using the YOLO framework.
+
+The workflow included:
+- Video selection
+- Frame extraction
+- Manual annotation
+- Dataset organization
+- Metadata file creation
+
+---
+
+## 🔹 Workflow
+
+### 1. Video Selection
+- Selected a real-world traffic video containing people and vehicles
+- Avoided animated or cartoon-based videos
+
+---
+
+### 2. Frame Extraction
+- Extracted image frames from video using FFmpeg
+
+### Command Used
+
+```bash
+ffmpeg -i input.mp4 -vf fps=2 images/img_%03d.jpg
+
+---
+
