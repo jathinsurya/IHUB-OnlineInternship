@@ -221,4 +221,3 @@ The workflow included:
 ffmpeg -i input.mp4 -vf fps=2 images/img_%03d.jpg
 
 ---
-
