@@ -430,17 +430,17 @@ IHUB-OnlineInternship/
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │                                                                 │
-│  VIDEO ENGINEERING          AI / ML                            │
-│  ─────────────────          ──────                             │
+│  VIDEO ENGINEERING          AI / ML                             │
+│  ─────────────────          ──────                              │
 │  ✦ Frame extraction         ✦ Transfer learning                │
 │  ✦ Video reconstruction     ✦ Custom model training            │
 │  ✦ Audio synchronization    ✦ mAP / Precision / Recall         │
 │  ✦ FPS & resolution norm    ✦ Inference pipelines              │
 │                                                                 │
-│  COMPUTER VISION            DATA ENGINEERING                   │
-│  ────────────────           ────────────────                   │
+│  COMPUTER VISION            DATA ENGINEERING                    │
+│  ────────────────           ────────────────                    │
 │  ✦ Object detection         ✦ Dataset design & splits          │
-│  ✦ Semantic segmentation    ✦ Manual annotation workflows       │
+│  ✦ Semantic segmentation    ✦ Manual annotation workflows      │
 │  ✦ Bounding boxes           ✦ YOLO label format                │
 │  ✦ Pixel-level masks        ✦ data.yaml · metadata files       │
 │                                                                 │
