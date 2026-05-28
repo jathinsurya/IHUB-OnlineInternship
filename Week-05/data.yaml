@@ -1,0 +1,7 @@
+path: .
+
+train: resized/train
+val: resized/val
+
+nc: 2
+names: ["person", "vehicle"]
